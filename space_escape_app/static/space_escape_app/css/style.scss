@@ -1,0 +1,89 @@
+h1, h2, h3, h4, h5, h6, p {
+  font-family: sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.mainBody {
+  width: 80%;
+  max-width: 80%;
+  margin-left: 10%;
+  .mainText {
+    margin-top: 5%;
+  }
+}
+
+.heroCustomize {
+  height: 400px;
+  width: 100%;
+  // background-color: black;
+  background-image: url("../images/star_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  .colorOptions {
+    float: right;
+    text-align: left;
+    padding: 3%;
+    width: 35%;
+    margin-top: 5%;
+    .nameButton {
+      margin: 3%;
+      margin-left: 0;
+      margin-right: 10%;
+    }
+    .colorText {
+      color: white;
+    }
+    .colorButton1, .colorButton2, .colorButton3 {
+      font-size: 20px;
+      padding: 2%;
+      margin: 3%;
+      margin-left: 0;
+      margin-right: 10%;
+      color: white;
+    }
+    .colorButton1 {
+      background-color: red;
+    }
+
+    .colorButton2 {
+      background-color: blue;
+    }
+
+    .colorButton3 {
+      background-color: green;
+    }
+  }
+}
+
+.heroRocketship {
+  height: 400px;
+  width: 100%;
+  background-image: url("../images/spacerocket.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.imgAlien {
+  height: 90%;
+  width: 45%;
+  margin-top: 7%;
+  float: left;
+}
+
+.options, .magicball {
+  text-align: center;
+  padding: 2%;
+}
+
+.optionButton1, .optionButton2, .magicBallButton {
+  font-size: 20px;
+  padding: 1%;
+  margin: 2% 11%;
+  background-color: pink;
+}

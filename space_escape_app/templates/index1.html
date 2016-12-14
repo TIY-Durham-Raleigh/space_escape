@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TIY The Great Space Escape!</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+    <!-- <link rel="stylesheet" href="css/remodal.css">
+    <link rel="stylesheet" href="css/remodal-default-theme.css"> -->
+    <link rel="stylesheet" href='{% static "space_escape_app/css/style.css" %}'>
+  </head>
+  <body onload=start()>
+
+    <div class="heroRocketship">
+    <!-- <img type='hidden' class="imgAlien" src="images/alien_green.png"> -->
+    </div>
+
+    <div class="mainBody">
+      <div class="mainText">
+        <p>Here is some text about the scene. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="options">
+        <button class="optionButton1">NYC</button>
+        <button class="optionButton2">IOWA</button>
+      </div>
+      <div class="magicball">
+        <p>Feeling lucky? Shake the Magic Ball instead!</p>
+        <br>
+        <button class="magicBallButton">magic ball</button>
+      </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'space_escape_app/js/main.js' %}"></script>
+
+</body>
+</html>

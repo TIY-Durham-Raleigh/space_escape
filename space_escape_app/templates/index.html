@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TIY The Great Space Escape!</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+    <!-- <link rel="stylesheet" href="css/remodal.css">
+    <link rel="stylesheet" href="css/remodal-default-theme.css"> -->
+    <link rel="stylesheet" href='{% static "space_escape_app/css/style.css" %}'>
+  </head>
+  <body>
+
+
+    <div class="heroCustomize">
+      <img class="imgAlien" id="imgAlien" src="{% static 'space_escape_app/images/alien_white.png' %}">
+      <div class="colorOptions">
+        <h4 class="colorText">Who am I ?</h4>
+        <input class="nameButton"></input>
+        <br><br><br>
+        <h4 class="colorText">Dress Me Up !</h4>
+        <button class="colorButton1" onclick="document.getElementById('imgAlien').src='{% static 'space_escape_app/images/alien_red.png' %}'">RED</button>
+        <button class="colorButton2" onclick="document.getElementById('imgAlien').src='{% static 'space_escape_app/images/alien_blue.png' %}'">BLUE</button>
+        <button class="colorButton3" onclick="document.getElementById('imgAlien').src='{% static 'space_escape_app/images/alien_green.png' %}'">GREEN</button>
+      </div>
+      <!-- <div class="magicball">
+        <p>Feeling lucky? Shake the Magic Ball instead!</p>
+        <br>
+        <button class="magicBallButton">magic ball</button>
+      </div> -->
+    </div>
+
+    <div class="mainBody">
+      <div class="mainText">
+        <p>Here is some text about the scene. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <!-- <button class="start" onclick=>Start</button> -->
+        <input type="button" onclick="location.href='index1'" value="Go to start" />
+      </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'space_escape_app/js/main.js' %}"></script>
+</body>
+</html>

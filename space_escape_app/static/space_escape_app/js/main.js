@@ -33,7 +33,8 @@ $.ajaxSetup({
 var current_question
 var nextQuestion1
 var nextQuestion2
-
+var choiceBackground1
+var choiceBackground2
 
 function start() {
     getChoices(1)
@@ -41,50 +42,61 @@ function start() {
 
 
 function getChoices(question_id) {
-    $("#question").html("")
-    $("#choice1").html("")
-    $("#choice2").html("")
+    $(".mainText").html("")
+    $(".optionButton1").html("")
+    $(".optionButton2").html("")
     var $table = $("<p>")
     var $table1 = $("<p>")
     var $table2 = $("<p>")
     $.ajax('/api/question/' + question_id).done(function (stuff){
-        $table.html($table.html() + "<tr><td>" + stuff['question_text'] + "<br>")
+        console.log(stuff['question_text'])
+        $table.html($table.html() + "<p>" + stuff['question_text'] + "</p>")
         $table1.html($table1.html() + "<tr><td>" + stuff.choice[0]['choice_text'] + "<br>")
         $table2.html($table2.html() + "<tr><td>" + stuff.choice[1]['choice_text'] + "<br>")
-        $('#question').append($table)
-        $('#choice1').append($table1)
-        $('#choice2').append($table2)
+        $('.mainText').append($table)
+        $('.optionButton1').append($table1)
+        $('.optionButton2').append($table2)
         current_question = question_id
         nextQuestion1 = stuff.choice[0]['next_question']
         nextQuestion2 = stuff.choice[1]['next_question']
+        choiceBackground1 = "url('" + stuff.choice[0]['choice_image_url'] + "')"
+        choiceBackground2 = "url('" + stuff.choice[1]['choice_image_url'] + "')"
+        console.log(choiceBackground1)
+        console.log(choiceBackground2)
     })
 }
 
 
-function getQuestion(question_id) {
-    $("#question").html("")
-    var $table = $("<p>")
-    var $table1 = $("<p>")
-    var $table2 = $("<p>")
-    $.ajax('/api/question/' + question_id).done(function (stuff){
-        console.log(stuff.choice)
-        $table.html($table.html() + "<tr><td>" + stuff['question_text'] + "<br>")
-        $table1.html($table.html() + "<tr><td>" + stuff['question_text'] + "<br>")
-        $table2.html($table.html() + "<tr><td>" + stuff.choice['question_text'] + "<br>")
-        $('#question').append($table)
-        getChoices(question_id)
-    })
+function magicBall(){
+  arr = [1, 2];
+  var rand = Math.random();
+  rand *= arr.length;
+  rand = Math.floor(rand);
+  if(rand == 0){
+      $(".optionButton1").css('background-color', 'red')
+      setTimeout($(".optionButton1").css('background-color', 'pink'), 1500)
+      setTimeout(choice1, 2000)
+  }
+  else{
+      $(".optionButton2").css('background-color', 'red')
+      setTimeout($(".optionButton2").css('background-color', 'pink'), 1500)
+      setTimeout(choice2, 2000)
+  }
 }
 
 
 function choice1() {
-    console.log(nextQuestion1)
     getChoices(nextQuestion1)
-    $('body').css('background-image', "url('/static/space_escape_app/images/corn_field.jpg')")
+    $('.heroRocketship').css('background-image', choiceBackground1)
 }
 
 
 function choice2() {
     getChoices(nextQuestion2)
-    $('body').css('background-image', "url('/static/space_escape_app/images/La.jpg')")
+    $('.heroRocketship').css('background-image', choiceBackground2)
 }
+
+
+$(".optionButton1").click(choice1)
+$(".optionButton2").click(choice2)
+$(".magicBallButton").click(magicBall)

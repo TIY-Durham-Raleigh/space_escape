@@ -132,4 +132,4 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../space_escape_app/static/images/')
-MEDIA_URL = '/images/'
+MEDIA_URL = '/'
