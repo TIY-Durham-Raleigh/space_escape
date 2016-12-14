@@ -9,12 +9,20 @@
 
         <div id="question">
         </div>
-        <div id="choices">
+        <div id="choice1">
+        </div>
+        <div id="choice2">
+        </div>
+        <div id="nextQuestion1">
+        </div>
+        <div id="nextQuestion2">
         </div>
 
-        <div id="start">
-            <button onClick=getQuestion(1)> Start </button>
-        </div>
+
+        <button onclick=start()>start</button>
+     <p><button onclick=choice1()>Choice 1</button></p>
+     <p><button onclick=choice2()>Choice 2</button></p>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="{% static 'space_escape_app/js/main.js' %}"></script>
     </body>

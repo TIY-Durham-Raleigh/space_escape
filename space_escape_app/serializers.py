@@ -7,15 +7,15 @@ class ChoiceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Choice
-        fields = ('url', 'choice_text', 'id', 'question', 'next_question')
+        fields = ('__all__')
 
 
 class QuestionSerializer(serializers.ModelSerializer):
-    choices = ChoiceSerializer(read_only=True, many=True)
+    choice = ChoiceSerializer(read_only=True, many=True)
 
     class Meta:
         model = Question
-        fields = ('url', 'question_text', 'id', 'choices')
+        fields = ('url', 'question_text', 'id', 'choice')
 
 
 class CharacterSerializer(serializers.ModelSerializer):
